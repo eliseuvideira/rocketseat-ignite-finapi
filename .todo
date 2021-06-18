@@ -12,6 +12,6 @@
 [x] cadastrar conta com cpf existente
 [x] buscar extrato de uma conta inexistente
 [x] fazer deposito em uma conta inexistente
-[] fazer saque em uma conta inexistente
-[] fazer saque se saldo for insuficiente
+[x] fazer saque em uma conta inexistente
+[x] fazer saque se saldo for insuficiente
 [] excluir uma conta inexistente
