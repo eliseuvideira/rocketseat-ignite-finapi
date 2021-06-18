@@ -6,11 +6,13 @@ const {
   contasGetOne,
   contasGetOneExtratosGetMany,
   contasGetOneDepositarPostOne,
+  contasGetOneSacarPostOne,
 } = require("../endpoints/contas");
 const {
   contasPostOneBody,
   contasGetOneParams,
   contasGetOneDepositarPostOneBody,
+  contasGetOneSacarPostOneBody,
 } = require("../validations/contas");
 
 const router = Router();
@@ -32,6 +34,13 @@ router.post(
   params(contasGetOneParams),
   body(contasGetOneDepositarPostOneBody),
   contasGetOneDepositarPostOne
+);
+
+router.post(
+  "/contas/:conta_id/sacar",
+  params(contasGetOneParams),
+  body(contasGetOneSacarPostOneBody),
+  contasGetOneSacarPostOne
 );
 
 module.exports = router;

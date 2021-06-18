@@ -74,3 +74,38 @@ exports.contasGetOneDepositarPostOne = endpoint(async (req, res) => {
 
   res.status(201).json(extrato);
 });
+
+const getSaldo = (conta) =>
+  conta.extratos.reduce(
+    (prev, curr) => prev + (curr.tipo === "credito" ? 1 : -1) * curr.valor,
+    0
+  );
+
+exports.contasGetOneSacarPostOne = endpoint(async (req, res) => {
+  const { conta_id } = req.params;
+
+  const conta = contas.find((x) => x.conta_id === conta_id);
+
+  if (!conta) {
+    throw new HttpError(404, "Not found");
+  }
+
+  const { valor } = req.body;
+
+  const total = getSaldo(conta);
+
+  if (valor > total) {
+    throw new HttpError(400, `Saldo insuficiente para fazer saque`);
+  }
+
+  const extrato = {
+    descricao: "Saque",
+    valor,
+    created_at: new Date(),
+    tipo: "debito",
+  };
+
+  conta.extratos.push(extrato);
+
+  res.status(201).json(extrato);
+});
