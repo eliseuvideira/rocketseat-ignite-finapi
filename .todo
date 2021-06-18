@@ -2,8 +2,8 @@
 [x] criar uma conta
 [x] buscar extrato bancario de um cliente
 [x] realizar um deposito
-[] realizar um saque
-[] buscar extrato bancario por data
+[x] realizar um saque
+[x] buscar extrato bancario por data
 [] atualizar dados do cliente
 [x] obter dados da conta do cliente
 [] deletar uma conta

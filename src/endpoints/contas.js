@@ -109,3 +109,20 @@ exports.contasGetOneSacarPostOne = endpoint(async (req, res) => {
 
   res.status(201).json(extrato);
 });
+
+exports.contasGetOneExtratosDataGetMany = endpoint(async (req, res) => {
+  const { conta_id } = req.params;
+
+  const conta = contas.find((x) => x.conta_id === conta_id);
+
+  if (!conta) {
+    throw new HttpError(404, "Not found");
+  }
+  const { data } = req.query;
+
+  const extratos = conta.extratos.filter(
+    (x) => x.created_at.getTime() >= data.getTime()
+  );
+
+  res.status(200).json(extratos);
+});

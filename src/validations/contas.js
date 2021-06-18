@@ -27,3 +27,9 @@ exports.contasGetOneSacarPostOneBody = Joi.object()
     valor: Joi.number().min(0).not(0),
   })
   .required();
+
+exports.contasGetOneExtratosDataGetManyQuery = Joi.object()
+  .keys({
+    data: Joi.date().required(),
+  })
+  .required();
