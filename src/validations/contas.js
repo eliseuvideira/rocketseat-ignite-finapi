@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-exports.accountsPostOneBody = Joi.object()
+exports.contasPostOneBody = Joi.object()
   .keys({
     cpf: Joi.string()
       .regex(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/)
@@ -9,7 +9,7 @@ exports.accountsPostOneBody = Joi.object()
   })
   .required();
 
-exports.accountsGetOneParams = Joi.object()
+exports.contasGetOneParams = Joi.object()
   .keys({
     account_id: Joi.string().required(),
   })

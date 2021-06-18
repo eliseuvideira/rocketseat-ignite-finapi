@@ -1,1 +1,1 @@
-exports.customers = [];
+exports.contas = [];

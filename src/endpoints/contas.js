@@ -1,16 +1,16 @@
 const { endpoint } = require("@ev-fns/endpoint");
 const { HttpError } = require("@ev-fns/errors");
 const { nanoid } = require("nanoid");
-const { customers } = require("../functions/database");
+const { contas } = require("../functions/database");
 
-exports.accountsGetMany = endpoint(async (req, res) => {
-  res.status(200).json(customers);
+exports.contasGetMany = endpoint(async (req, res) => {
+  res.status(200).json(contas);
 });
 
-exports.accountsPostOne = endpoint(async (req, res) => {
+exports.contasPostOne = endpoint(async (req, res) => {
   const { cpf, name } = req.body;
 
-  const exists = customers.some((x) => x.cpf === cpf);
+  const exists = contas.some((x) => x.cpf === cpf);
   if (exists) {
     throw new HttpError(409, `Customer cpf: "${cpf}" already exists`);
   }
@@ -22,15 +22,15 @@ exports.accountsPostOne = endpoint(async (req, res) => {
     created_at: new Date(),
   };
 
-  customers.push(customer);
+  contas.push(customer);
 
   res.status(201).json(customer);
 });
 
-exports.accountsGetOne = endpoint(async (req, res) => {
+exports.contasGetOne = endpoint(async (req, res) => {
   const { account_id } = req.params;
 
-  const customer = customers.find((x) => x.account_id === account_id);
+  const customer = contas.find((x) => x.account_id === account_id);
 
   if (!customer) {
     throw new HttpError(404, "Not found");
