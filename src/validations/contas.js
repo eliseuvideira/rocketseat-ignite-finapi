@@ -11,6 +11,6 @@ exports.contasPostOneBody = Joi.object()
 
 exports.contasGetOneParams = Joi.object()
   .keys({
-    account_id: Joi.string().required(),
+    conta_id: Joi.string().required(),
   })
   .required();

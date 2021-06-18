@@ -15,26 +15,39 @@ exports.contasPostOne = endpoint(async (req, res) => {
     throw new HttpError(409, `Customer cpf: "${cpf}" already exists`);
   }
 
-  const customer = {
+  const conta = {
     cpf,
     name,
-    account_id: nanoid(),
+    conta_id: nanoid(),
     created_at: new Date(),
+    extratos: [],
   };
 
-  contas.push(customer);
+  contas.push(conta);
 
-  res.status(201).json(customer);
+  res.status(201).json(conta);
 });
 
 exports.contasGetOne = endpoint(async (req, res) => {
-  const { account_id } = req.params;
+  const { conta_id } = req.params;
 
-  const customer = contas.find((x) => x.account_id === account_id);
+  const conta = contas.find((x) => x.conta_id === conta_id);
 
-  if (!customer) {
+  if (!conta) {
     throw new HttpError(404, "Not found");
   }
 
-  res.status(200).json(customer);
+  res.status(200).json(conta);
+});
+
+exports.contasGetOneExtratosGetMany = endpoint(async (req, res) => {
+  const { conta_id } = req.params;
+
+  const conta = contas.find((x) => x.conta_id === conta_id);
+
+  if (!conta) {
+    throw new HttpError(404, "Not found");
+  }
+
+  res.status(200).json(conta.extratos);
 });

@@ -4,6 +4,7 @@ const {
   contasPostOne,
   contasGetMany,
   contasGetOne,
+  contasGetOneExtratosGetMany,
 } = require("../endpoints/contas");
 const {
   contasPostOneBody,
@@ -16,6 +17,12 @@ router.get("/contas", contasGetMany);
 
 router.post("/contas", body(contasPostOneBody), contasPostOne);
 
-router.get("/contas/:account_id", params(contasGetOneParams), contasGetOne);
+router.get("/contas/:conta_id", params(contasGetOneParams), contasGetOne);
+
+router.get(
+  "/contas/:conta_id/extratos",
+  params(contasGetOneParams),
+  contasGetOneExtratosGetMany
+);
 
 module.exports = router;
