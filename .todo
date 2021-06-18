@@ -7,7 +7,7 @@
 [x] atualizar dados do cliente
 [x] obter dados da conta do cliente
 [x] deletar uma conta
-[] retornar saldo
+[x] retornar saldo
 
 # nao deve ser possivel
 [x] cadastrar conta com cpf existente
@@ -16,4 +16,4 @@
 [x] fazer saque em uma conta inexistente
 [x] fazer saque se saldo for insuficiente
 [x] excluir uma conta inexistente
-[] retornar saldo conta inexistente
+[x] retornar saldo conta inexistente
