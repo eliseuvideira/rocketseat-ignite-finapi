@@ -3,5 +3,17 @@
   "version": "0.1.0",
   "main": "index.js",
   "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@ev-fns/dotenv": "^0.2.2",
+    "express": "^4.17.1",
+    "nanoid": "^3.1.23"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  }
 }
