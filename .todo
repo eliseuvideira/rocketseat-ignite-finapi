@@ -1,0 +1,17 @@
+# deve ser possivel
+[x] criar uma conta
+[x] buscar extrato bancario de um cliente
+[x] realizar um deposito
+[] realizar um saque
+[] buscar extrato bancario por data
+[] atualizar dados do cliente
+[x] obter dados da conta do cliente
+[] deletar uma conta
+
+# nao deve ser possivel
+[x] cadastrar conta com cpf existente
+[x] buscar extrato de uma conta inexistente
+[x] fazer deposito em uma conta inexistente
+[] fazer saque em uma conta inexistente
+[] fazer saque se saldo for insuficiente
+[] excluir uma conta inexistente
