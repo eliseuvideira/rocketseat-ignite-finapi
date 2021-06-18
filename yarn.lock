@@ -11,6 +11,13 @@
     dotenv "^8.2.0"
     dotenv-safe "^8.2.0"
 
+"@ev-fns/endpoint@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@ev-fns/endpoint/-/endpoint-0.1.2.tgz#65b0e231453a744eeddc7b65e2eba08c607c0230"
+  integrity sha512-phi2WR4BlT7ldo2yPDGqY0vURE6sAxJRfE0tmhEBEX/bkggplxv0h8sFP6K6nsSogfCk3iyM9YSGlzOpuUFd7w==
+  dependencies:
+    express "^4.17.1"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"

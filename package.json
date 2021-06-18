@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@ev-fns/dotenv": "^0.2.2",
+    "@ev-fns/endpoint": "^0.1.2",
     "express": "^4.17.1",
     "nanoid": "^3.1.23"
   },
