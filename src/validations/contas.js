@@ -22,14 +22,14 @@ exports.contasGetOneParams = Joi.object()
 
 exports.contasGetOneDepositarPostOneBody = Joi.object()
   .keys({
-    valor: Joi.number().min(0).not(0),
+    valor: Joi.number().min(0).not(0).required(),
     descricao: Joi.string().required(),
   })
   .required();
 
 exports.contasGetOneSacarPostOneBody = Joi.object()
   .keys({
-    valor: Joi.number().min(0).not(0),
+    valor: Joi.number().min(0).not(0).required(),
   })
   .required();
 
