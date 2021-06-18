@@ -52,6 +52,38 @@ exports.contasGetOneExtratosGetMany = endpoint(async (req, res) => {
   res.status(200).json(conta.extratos);
 });
 
+exports.contasPatchOne = endpoint(async (req, res) => {
+  const { conta_id } = req.params;
+
+  const conta = contas.find((x) => x.conta_id === conta_id);
+
+  if (!conta) {
+    throw new HttpError(404, "Not found");
+  }
+
+  const { name } = req.body;
+
+  conta.name = name;
+
+  res.status(200).json(conta);
+});
+
+exports.contasDeleteOne = endpoint(async (req, res) => {
+  const { conta_id } = req.params;
+
+  const conta = contas.find((x) => x.conta_id === conta_id);
+
+  if (!conta) {
+    throw new HttpError(404, "Not found");
+  }
+
+  const contaIndex = contas.findIndex((x) => x.conta_id === conta_id);
+
+  contas.splice(contaIndex, 1);
+
+  res.status(204).end();
+});
+
 exports.contasGetOneDepositarPostOne = endpoint(async (req, res) => {
   const { conta_id } = req.params;
 

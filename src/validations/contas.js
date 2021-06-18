@@ -9,6 +9,11 @@ exports.contasPostOneBody = Joi.object()
   })
   .required();
 
+exports.contasPatchOneBody = Joi.object()
+  .keys({ name: Joi.string() })
+  .min(1)
+  .required();
+
 exports.contasGetOneParams = Joi.object()
   .keys({
     conta_id: Joi.string().required(),

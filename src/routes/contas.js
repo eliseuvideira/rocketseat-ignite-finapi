@@ -8,6 +8,8 @@ const {
   contasGetOneDepositarPostOne,
   contasGetOneSacarPostOne,
   contasGetOneExtratosDataGetMany,
+  contasPatchOne,
+  contasDeleteOne,
 } = require("../endpoints/contas");
 const {
   contasPostOneBody,
@@ -15,6 +17,7 @@ const {
   contasGetOneDepositarPostOneBody,
   contasGetOneSacarPostOneBody,
   contasGetOneExtratosDataGetManyQuery,
+  contasPatchOneBody,
 } = require("../validations/contas");
 
 const router = Router();
@@ -24,6 +27,15 @@ router.get("/contas", contasGetMany);
 router.post("/contas", body(contasPostOneBody), contasPostOne);
 
 router.get("/contas/:conta_id", params(contasGetOneParams), contasGetOne);
+
+router.patch(
+  "/contas/:conta_id",
+  params(contasGetOneParams),
+  body(contasPatchOneBody),
+  contasPatchOne
+);
+
+router.delete("/contas/:conta_id", params(contasGetOneParams), contasDeleteOne);
 
 router.get(
   "/contas/:conta_id/extratos",

@@ -4,9 +4,9 @@
 [x] realizar um deposito
 [x] realizar um saque
 [x] buscar extrato bancario por data
-[] atualizar dados do cliente
+[x] atualizar dados do cliente
 [x] obter dados da conta do cliente
-[] deletar uma conta
+[x] deletar uma conta
 
 # nao deve ser possivel
 [x] cadastrar conta com cpf existente
@@ -14,4 +14,4 @@
 [x] fazer deposito em uma conta inexistente
 [x] fazer saque em uma conta inexistente
 [x] fazer saque se saldo for insuficiente
-[] excluir uma conta inexistente
+[x] excluir uma conta inexistente
