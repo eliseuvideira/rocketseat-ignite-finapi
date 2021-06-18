@@ -8,3 +8,9 @@ exports.accountsPostOneBody = Joi.object()
     name: Joi.string().required(),
   })
   .required();
+
+exports.accountsGetOneParams = Joi.object()
+  .keys({
+    account_id: Joi.string().required(),
+  })
+  .required();
