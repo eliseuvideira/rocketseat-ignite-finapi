@@ -113,6 +113,20 @@ const getSaldo = (conta) =>
     0
   );
 
+exports.contasGetOneSaldoGetOne = endpoint(async (req, res) => {
+  const { conta_id } = req.params;
+
+  const conta = contas.find((x) => x.conta_id === conta_id);
+
+  if (!conta) {
+    throw new HttpError(404, "Not found");
+  }
+
+  const saldo = getSaldo(conta);
+
+  res.status(200).json({ saldo });
+});
+
 exports.contasGetOneSacarPostOne = endpoint(async (req, res) => {
   const { conta_id } = req.params;
 

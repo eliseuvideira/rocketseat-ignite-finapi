@@ -10,6 +10,7 @@ const {
   contasGetOneExtratosDataGetMany,
   contasPatchOne,
   contasDeleteOne,
+  contasGetOneSaldoGetOne,
 } = require("../endpoints/contas");
 const {
   contasPostOneBody,
@@ -36,6 +37,12 @@ router.patch(
 );
 
 router.delete("/contas/:conta_id", params(contasGetOneParams), contasDeleteOne);
+
+router.get(
+  "/contas/:conta_id/saldo",
+  params(contasGetOneParams),
+  contasGetOneSaldoGetOne
+);
 
 router.get(
   "/contas/:conta_id/extratos",
